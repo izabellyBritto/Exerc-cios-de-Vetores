@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numeros = new int[10];
+
+        Console.WriteLine("Digite 10 números inteiros:");
+
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write($"Número {i + 1}: ");
+            numeros[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Console.Write("Digite um número alvo: ");
+        int alvo = Convert.ToInt32(Console.ReadLine());
+
+        bool encontrado = false;
+        foreach (int numero in numeros)
+        {
+            if (numero == alvo)
+            {
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (encontrado)
+        {
+            Console.WriteLine($"O número {alvo} está presente no vetor.");
+        }
+        else
+        {
+            Console.WriteLine($"O número {alvo} não está presente no vetor.");
+        }
+    }
+}
